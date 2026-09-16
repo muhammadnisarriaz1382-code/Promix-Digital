@@ -7,7 +7,7 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       { title: "Services — Promix Digital" },
-      { name: "description", content: "Shopify & WordPress store creation, Meta ads, branding, video editing, and 1-on-1 dropshipping consultation." },
+      { name: "description", content: "Shopify & WordPress store creation, Meta, Google, TikTok & Pinterest ads, branding, video editing, and 1-on-1 dropshipping consultation." },
       { property: "og:title", content: "Services — Promix Digital" },
       { property: "og:description", content: "Five services. One growth engine for your brand." },
       { property: "og:type", content: "website" },
@@ -26,9 +26,9 @@ const services = [
   },
   {
     icon: Megaphone,
-    title: "Meta Marketing & Ads",
-    desc: "Facebook and Instagram ad campaigns engineered for ROAS — from creative testing to scaling winners profitably.",
-    features: ["Audience research", "Creative testing", "Funnel optimization", "Weekly reporting"],
+    title: "Meta, Google, TikTok & Pinterest Ads",
+    desc: "Multi-platform ad campaigns engineered for ROAS — Meta, Google, TikTok, and Pinterest — from creative testing to scaling winners profitably.",
+    features: ["Audience & keyword research", "Creative testing", "Funnel optimization", "Weekly reporting"],
   },
   {
     icon: Palette,
@@ -46,7 +46,7 @@ const services = [
     icon: GraduationCap,
     title: "Consultation & Classes",
     desc: "1-on-1 dropshipping consultation covering everything from product research to scaling your first profitable store.",
-    features: ["Meta marketing strategies", "Product hunting methods", "Creatives hunting & making", "Store management for clients", "Tricks & tools"],
+    features: ["Multi-platform ad strategies", "Product hunting methods", "Creatives hunting & making", "Store management for clients", "Tricks & tools"],
   },
 ];
 
