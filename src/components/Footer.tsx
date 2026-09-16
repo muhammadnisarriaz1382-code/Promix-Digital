@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Globe, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
-import logo from "@/assets/promix-logo.png";
+import logoAsset from "@/assets/promix-logo-wide.png.asset.json";
+const logo = logoAsset.url;
 
 export function Footer() {
   return (
