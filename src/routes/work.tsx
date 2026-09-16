@@ -1,7 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, Target } from "lucide-react";
+import baghistanAsset from "@/assets/client-work/baghistan.png.asset.json";
+import fineTuneAsset from "@/assets/client-work/fine-tune-3d.png.asset.json";
+import jewelryPalaceAsset from "@/assets/client-work/jewelry-palace.png.asset.json";
+import artisanSoapAsset from "@/assets/client-work/artisan-soap-co.png.asset.json";
+import londonFurnitureAsset from "@/assets/client-work/london-furniture.png.asset.json";
+import noirIndulgenceAsset from "@/assets/client-work/noir-indulgence.jpg.asset.json";
 
 export const Route = createFileRoute("/work")({
   head: () => ({
@@ -9,19 +15,57 @@ export const Route = createFileRoute("/work")({
       { title: "Our Work — Promix Digital" },
       { name: "description", content: "Selected work from Promix Digital — storefronts, ad campaigns, branding, and video for brands that scaled." },
       { property: "og:title", content: "Our Work — Promix Digital" },
-      { property: "og:description", content: "Real brands. Real results. See what we've built." },
+      { property: "og:description", content: "Explore brand, ecommerce, and creative work by Promix Digital." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: WorkPage,
 });
 
 const projects = [
-  { title: "Lumora Skincare", category: "Shopify Store + Meta Ads", result: "6.2x ROAS in 90 days", color: "from-emerald-500/20 to-primary/30" },
-  { title: "NorthGear Apparel", category: "Brand Identity + Storefront", result: "$180k month one", color: "from-primary/30 to-lime-500/20" },
-  { title: "PetPals Co.", category: "Dropshipping Management", result: "0 to $40k/mo in 60 days", color: "from-green-500/20 to-primary/20" },
-  { title: "Fitline Studio", category: "Video Ads + Creative", result: "3.4x lower CPA", color: "from-primary/20 to-emerald-400/20" },
-  { title: "Aurora Home", category: "WordPress + WooCommerce", result: "Launched in 14 days", color: "from-lime-500/20 to-primary/30" },
-  { title: "Velo Coffee", category: "Branding + Storefront", result: "Sold out launch drop", color: "from-primary/30 to-green-500/20" },
+  {
+    title: "Baghistan",
+    category: "D2C Strategy · Ecommerce",
+    goal: "Build a conversion-focused online presence for a premium mango brand and make seasonal pre-orders simple.",
+    image: baghistanAsset.url,
+    imageClass: "object-contain p-10",
+  },
+  {
+    title: "Fine Tune 3D",
+    category: "Digital Presence · Lead Generation",
+    goal: "Present specialized 3D services clearly and create a stronger path from discovery to qualified enquiries.",
+    image: fineTuneAsset.url,
+    imageClass: "object-contain p-10",
+  },
+  {
+    title: "Jewelry Palace",
+    category: "Brand Positioning · Creative",
+    goal: "Shape a premium visual direction that builds trust and highlights diamonds and watches with clarity.",
+    image: jewelryPalaceAsset.url,
+    imageClass: "object-contain p-8",
+  },
+  {
+    title: "Artisan Soap Co.",
+    category: "Brand Identity · Product Storytelling",
+    goal: "Create a clean, approachable identity that lets handcrafted products and their story take center stage.",
+    image: artisanSoapAsset.url,
+    imageClass: "object-contain p-8",
+  },
+  {
+    title: "London Furniture",
+    category: "Luxury Branding · Social Creative",
+    goal: "Establish a refined identity and visual system suited to a premium home-furnishing audience.",
+    image: londonFurnitureAsset.url,
+    imageClass: "object-cover",
+  },
+  {
+    title: "Noir Indulgence",
+    category: "Luxury Identity · Launch Creative",
+    goal: "Develop an elegant brand presence with rich campaign visuals designed for a high-end launch.",
+    image: noirIndulgenceAsset.url,
+    imageClass: "object-cover",
+  },
 ];
 
 function WorkPage() {
@@ -31,10 +75,10 @@ function WorkPage() {
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Selected work</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-bold text-foreground md:text-6xl">
-            Brands we've helped <span className="text-gradient">scale</span>
+            Brands we've helped <span className="text-gradient">move forward</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            A selection of recent projects — from zero-to-launch storefronts to seven-figure ad accounts.
+            Selected client work across ecommerce, brand identity, creative direction, and digital growth.
           </p>
         </div>
       </section>
@@ -42,21 +86,26 @@ function WorkPage() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
-            <div key={p.title} className="group cursor-pointer overflow-hidden rounded-2xl border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card">
-              <div className={`relative aspect-[4/3] overflow-hidden bg-gradient-to-br ${p.color}`}>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl font-bold text-foreground/20">{p.title.charAt(0)}</span>
-                </div>
-                <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/80 text-foreground opacity-0 backdrop-blur transition-smooth group-hover:opacity-100">
-                  <ArrowUpRight className="h-4 w-4" />
-                </div>
+            <article key={p.title} className="group overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card">
+              <div className="relative aspect-[4/3] overflow-hidden bg-background">
+                <img
+                  src={p.image}
+                  alt={`${p.title} logo`}
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${p.imageClass}`}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                />
               </div>
               <div className="p-6">
                 <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.category}</p>
                 <h3 className="mt-2 text-xl font-semibold text-foreground">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.result}</p>
+                <div className="mt-4 flex items-start gap-3 border-t border-border/60 pt-4">
+                  <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <p className="text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Project goal:</span> {p.goal}</p>
+                </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
@@ -66,7 +115,7 @@ function WorkPage() {
             Tell us about your goals — we'll send back a tailored growth plan within 48 hours.
           </p>
           <Button asChild size="lg" className="mt-8 bg-background text-foreground hover:bg-background/90">
-            <Link to="/contact">Start a Project</Link>
+            <Link to="/contact">Start a Project <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
         </div>
       </section>

@@ -29,18 +29,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Promix Digital Showcase is a sleek dark portfolio website for Promix Digital agency." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Promix Digital Showcase is a sleek dark portfolio website for Promix Digital agency." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Promix Digital Showcase is a sleek dark portfolio website for Promix Digital agency." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/43665191-63e8-4f46-902e-7a2f6c225771/id-preview-5ef1db94--5becc177-99e4-4620-b9ca-c4288c21bd7b.lovable.app-1776787109419.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/43665191-63e8-4f46-902e-7a2f6c225771/id-preview-5ef1db94--5becc177-99e4-4620-b9ca-c4288c21bd7b.lovable.app-1776787109419.png" },
+      { name: "description", content: "Promix Digital builds storefronts, campaigns, and brand experiences designed for growth." },
+      { name: "author", content: "Promix Digital" },
     ],
     links: [
       {

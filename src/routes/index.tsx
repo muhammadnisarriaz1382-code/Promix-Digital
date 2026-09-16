@@ -12,6 +12,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Promix Digital is a full-service agency for store creation, Meta marketing, branding, video editing, and dropshipping consultation." },
       { property: "og:title", content: "Promix Digital — Performance Marketing & Storefront Agency" },
       { property: "og:description", content: "We help brands reach more, convert better, and grow faster." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: HomePage,

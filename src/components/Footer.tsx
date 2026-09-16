@@ -42,7 +42,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> 0314-2043492</li>
               <li className="flex items-center gap-2"><Globe className="h-4 w-4 text-primary" /> promixdigital.co</li>
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> hello@promixdigital.co</li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> promixdigital.co@gmail.com</li>
             </ul>
           </div>
         </div>

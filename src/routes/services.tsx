@@ -10,6 +10,8 @@ export const Route = createFileRoute("/services")({
       { name: "description", content: "Shopify & WordPress store creation, Meta ads, branding, video editing, and 1-on-1 dropshipping consultation." },
       { property: "og:title", content: "Services — Promix Digital" },
       { property: "og:description", content: "Five services. One growth engine for your brand." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: ServicesPage,
