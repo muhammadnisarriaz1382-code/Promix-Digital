@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Promix Digital — Reach More. Convert Better. Grow Faster." },
-      { name: "description", content: "Promix Digital is a full-service agency for store creation, Meta marketing, branding, video editing, and dropshipping consultation." },
+      { name: "description", content: "Promix Digital is a full-service agency for store creation, Meta, Google, TikTok & Pinterest ads, branding, video editing, and dropshipping consultation." },
       { property: "og:title", content: "Promix Digital — Performance Marketing & Storefront Agency" },
       { property: "og:description", content: "We help brands reach more, convert better, and grow faster." },
       { property: "og:type", content: "website" },
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { number: "01", title: "Shopify / WordPress Stores", description: "End-to-end storefront builds engineered for conversion and scale.", icon: ShoppingBag },
-  { number: "02", title: "Meta Marketing & Ads", description: "Performance ad campaigns that turn audiences into paying customers.", icon: Megaphone },
+  { number: "02", title: "Meta, Google, TikTok & Pinterest Ads", description: "Multi-platform ad campaigns on Meta, Google, TikTok, and Pinterest that turn audiences into paying customers.", icon: Megaphone },
   { number: "03", title: "Graphic Design & Branding", description: "Identity systems and creative that make your brand impossible to ignore.", icon: Palette },
   { number: "04", title: "Video Editing", description: "Scroll-stopping cuts for ads, reels, and brand storytelling.", icon: Video },
   { number: "05", title: "Consultation & Classes", description: "1-on-1 coaching to take you from zero to your first profitable sale.", icon: GraduationCap },
@@ -48,8 +48,8 @@ function HomePage() {
               <span className="text-gradient">Grow faster.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-              Promix Digital builds high-converting storefronts, runs profitable Meta ads, and crafts
-              brand systems that scale — all under one roof.
+              Promix Digital builds high-converting storefronts, runs profitable ads across Meta,
+              Google, TikTok, and Pinterest, and crafts brand systems that scale — all under one roof.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow">
@@ -117,7 +117,7 @@ function HomePage() {
 
           <div className="space-y-3">
             {[
-              { icon: Target, t: "Marketing & Ads", d: "Full-funnel Meta campaigns optimized weekly." },
+              { icon: Target, t: "Marketing & Ads", d: "Multi-platform campaigns on Meta, Google, TikTok & Pinterest, optimized weekly." },
               { icon: ShoppingBag, t: "Store Creation & Management", d: "Built, tuned, and maintained for performance." },
               { icon: Sparkles, t: "Winning Product Hunting", d: "Data-backed product research that finds the gold." },
               { icon: Palette, t: "Creatives Making", d: "Hooks, statics, and UGC produced in-house." },
