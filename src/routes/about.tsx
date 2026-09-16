@@ -10,6 +10,8 @@ export const Route = createFileRoute("/about")({
       { name: "description", content: "Promix Digital is a performance-driven team of marketers, designers, and store builders helping brands grow faster." },
       { property: "og:title", content: "About Promix Digital" },
       { property: "og:description", content: "Meet the team behind the brands that scale." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: AboutPage,

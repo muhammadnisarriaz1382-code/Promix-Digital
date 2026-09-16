@@ -16,6 +16,8 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Get in touch with Promix Digital. Call 0314-2043492 or send us a message to start your project." },
       { property: "og:title", content: "Contact Promix Digital" },
       { property: "og:description", content: "Let's build something that converts. Reach out today." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: ContactPage,
@@ -59,8 +61,8 @@ function ContactPage() {
                 {[
                   { icon: Phone, label: "Phone", value: "0314-2043492" },
                   { icon: Globe, label: "Website", value: "promixdigital.co" },
-                  { icon: Mail, label: "Email", value: "hello@promixdigital.co" },
-                  { icon: MapPin, label: "Hours", value: "Mon – Sat · 10am – 8pm" },
+                  { icon: Mail, label: "Email", value: "promixdigital.co@gmail.com" },
+                  { icon: MapPin, label: "Hours", value: "Mon – Sat · 10am – 10pm" },
                 ].map((c) => (
                   <li key={c.label} className="flex items-start gap-4">
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
