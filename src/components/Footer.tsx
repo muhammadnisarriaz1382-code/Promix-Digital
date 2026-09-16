@@ -15,12 +15,17 @@ export function Footer() {
               storefront builds, and creative production.
             </p>
             <div className="mt-6 flex gap-3">
-              {[Instagram, Facebook, Linkedin].map((Icon, i) => (
+              {[
+                { Icon: Instagram, href: "https://www.instagram.com/promix.digital/", label: "Instagram" },
+                { Icon: Facebook, href: "https://www.facebook.com/promixdigitalmarketing", label: "Facebook" },
+              ].map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition-smooth hover:border-primary hover:text-primary"
-                  aria-label="Social link"
+                  aria-label={label}
                 >
                   <Icon className="h-4 w-4" />
                 </a>
