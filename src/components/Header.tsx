@@ -20,7 +20,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center" aria-label="Promix Digital home">
-          <img src={logo} alt="Promix Digital" className="h-9 w-auto" width={180} height={60} />
+          <img src={logo} alt="Promix Digital" className="h-10 w-auto" width={144} height={40} />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
