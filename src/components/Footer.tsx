@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Globe, Mail, Instagram, Facebook, Linkedin } from "lucide-react";
-import logo from "@/assets/promix-logo.png";
+import logoAsset from "@/assets/promix-logo-wide.png.asset.json";
+const logo = logoAsset.url;
 
 export function Footer() {
   return (
@@ -8,7 +9,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
-            <img src={logo} alt="Promix Digital" className="h-10 w-auto" width={200} height={66} />
+            <img src={logo} alt="Promix Digital" className="h-12 w-auto" width={172} height={48} />
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               We help brands reach more, convert better, and grow faster through performance marketing,
               storefront builds, and creative production.
