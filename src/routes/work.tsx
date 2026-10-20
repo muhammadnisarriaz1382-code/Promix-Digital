@@ -50,7 +50,7 @@ const projects: Project[] = [
     title: "ZenMart World",
     category: "Ecommerce Development · US Market Launch",
     goal: "Help shoppers find relevant products, understand their value and complete purchases through a clear, mobile-friendly storefront.",
-    image: "/zenmartworld-logo.jpeg",
+    image: "/zenmartworld-logo.png",
     link: "https://zenmartworld.com/",
   },
   {
