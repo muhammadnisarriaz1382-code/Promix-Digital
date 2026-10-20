@@ -145,6 +145,9 @@ function WorkPage() {
               <div className="p-6">
                 <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.category}</p>
                 <h3 className="mt-2 text-xl font-semibold text-foreground">{p.title}</h3>
+                {p.description && (
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                )}
                 <div className="mt-4 flex items-start gap-3 border-t border-border/60 pt-4">
                   <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <p className="text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Project goal:</span> {p.goal}</p>
