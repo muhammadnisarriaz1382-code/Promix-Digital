@@ -26,6 +26,7 @@ export const Route = createFileRoute("/work")({
 type Project = {
   title: string;
   category: string;
+  description?: string;
   goal: string;
   image: string;
   imageClass: string;
@@ -34,18 +35,45 @@ type Project = {
 
 const projects: Project[] = [
   {
+    title: "Brown Biscuit Games",
+    category: "Website Development · Performance Marketing",
+    description: "Built the brand's website and manage ongoing marketing to support its online presence and growth.",
+    goal: "Showcase the games through an engaging, easy-to-navigate website and support marketing campaigns that attract relevant audiences and encourage purchases.",
+    image: "/brownbiscuitgames-logo.png",
+    imageClass: "object-contain p-8",
+    link: "https://brownbiscuitgames.com/",
+  },
+  {
+    title: "CharmTot",
+    category: "Ecommerce Development · US Market Launch",
+    description: "Created the complete ecommerce website and launched the storefront for the US market.",
+    goal: "Build trust with first-time shoppers through clear navigation, informative product pages and a smooth journey from discovery to checkout.",
+    image: "/charmtot-logo.jpeg",
+    imageClass: "object-contain p-8",
+    link: "https://charmtot.com/",
+  },
+  {
+    title: "ZenMart World",
+    category: "Ecommerce Development · US Market Launch",
+    description: "Built and launched a dropshipping storefront for the US market, creating a cohesive shopping experience from product discovery to checkout.",
+    goal: "Help shoppers find relevant products, understand their value and complete purchases through a clear, mobile-friendly storefront.",
+    image: "/zenmartworld-logo.jpeg",
+    imageClass: "object-contain p-8",
+    link: "https://zenmartworld.com/",
+  },
+  {
     title: "Baghistan",
     category: "D2C Strategy · Ecommerce",
     goal: "Build a conversion-focused online presence for a premium mango brand and make seasonal pre-orders simple.",
     image: baghistanAsset.url,
-    imageClass: "object-contain p-10",
+    imageClass: "object-contain p-8",
   },
   {
     title: "Fine Tune 3D",
     category: "Digital Presence · Lead Generation",
     goal: "Present specialized 3D services clearly and create a stronger path from discovery to qualified enquiries.",
     image: fineTuneAsset.url,
-    imageClass: "object-contain p-10",
+    imageClass: "object-contain p-8",
   },
   {
     title: "Jewelry Palace",
@@ -117,6 +145,9 @@ function WorkPage() {
               <div className="p-6">
                 <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.category}</p>
                 <h3 className="mt-2 text-xl font-semibold text-foreground">{p.title}</h3>
+                {p.description && (
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                )}
                 <div className="mt-4 flex items-start gap-3 border-t border-border/60 pt-4">
                   <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <p className="text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Project goal:</span> {p.goal}</p>
