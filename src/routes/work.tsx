@@ -26,10 +26,8 @@ export const Route = createFileRoute("/work")({
 type Project = {
   title: string;
   category: string;
-  description?: string;
   goal: string;
   image: string;
-  imageClass: string;
   link?: string;
 };
 
@@ -37,28 +35,22 @@ const projects: Project[] = [
   {
     title: "Brown Biscuit Games",
     category: "Website Development · Performance Marketing",
-    description: "Built the brand's website and manage ongoing marketing to support its online presence and growth.",
     goal: "Showcase the games through an engaging, easy-to-navigate website and support marketing campaigns that attract relevant audiences and encourage purchases.",
     image: "/brownbiscuitgames-logo.png",
-    imageClass: "object-contain p-8",
     link: "https://brownbiscuitgames.com/",
   },
   {
     title: "CharmTot",
     category: "Ecommerce Development · US Market Launch",
-    description: "Created the complete ecommerce website and launched the storefront for the US market.",
     goal: "Build trust with first-time shoppers through clear navigation, informative product pages and a smooth journey from discovery to checkout.",
     image: "/charmtot-logo.jpeg",
-    imageClass: "object-contain p-8",
     link: "https://charmtot.com/",
   },
   {
     title: "ZenMart World",
     category: "Ecommerce Development · US Market Launch",
-    description: "Built and launched a dropshipping storefront for the US market, creating a cohesive shopping experience from product discovery to checkout.",
     goal: "Help shoppers find relevant products, understand their value and complete purchases through a clear, mobile-friendly storefront.",
     image: "/zenmartworld-logo.jpeg",
-    imageClass: "object-contain p-8",
     link: "https://zenmartworld.com/",
   },
   {
@@ -66,21 +58,18 @@ const projects: Project[] = [
     category: "D2C Strategy · Ecommerce",
     goal: "Build a conversion-focused online presence for a premium mango brand and make seasonal pre-orders simple.",
     image: baghistanAsset.url,
-    imageClass: "object-contain p-8",
   },
   {
     title: "Fine Tune 3D",
     category: "Digital Presence · Lead Generation",
     goal: "Present specialized 3D services clearly and create a stronger path from discovery to qualified enquiries.",
     image: fineTuneAsset.url,
-    imageClass: "object-contain p-8",
   },
   {
     title: "Jewelry Palace",
     category: "Brand Positioning · Creative",
     goal: "Shape a premium visual direction that builds trust and highlights diamonds and watches with clarity.",
     image: jewelryPalaceAsset.url,
-    imageClass: "object-contain p-8",
     link: "https://shopjewelrypalace.com/",
   },
   {
@@ -88,7 +77,6 @@ const projects: Project[] = [
     category: "Brand Identity · Product Storytelling",
     goal: "Create a clean, approachable identity that lets handcrafted products and their story take center stage.",
     image: artisanSoapAsset.url,
-    imageClass: "object-contain p-8",
     link: "https://artisansoapco.uk/",
   },
   {
@@ -96,16 +84,19 @@ const projects: Project[] = [
     category: "Luxury Branding · Social Creative",
     goal: "Establish a refined identity and visual system suited to a premium home-furnishing audience.",
     image: londonFurnitureAsset.url,
-    imageClass: "object-contain p-8",
   },
   {
     title: "Noir Indulgence",
     category: "Luxury Identity · Launch Creative",
     goal: "Develop an elegant brand presence with rich campaign visuals designed for a high-end launch.",
     image: noirIndulgenceAsset.url,
-    imageClass: "object-contain p-8",
   },
 ];
+
+// Same media box on every card; the logo sits in a centered square that
+// never stretches past the card, so wide logos stay small and uncropped.
+const MEDIA_BOX = "flex h-48 items-center justify-center overflow-hidden bg-background md:h-[320px]";
+const LOGO_SQUARE = "h-32 w-32 sm:h-44 sm:w-44 md:h-[280px] md:w-[280px]";
 
 function WorkPage() {
   return (
@@ -123,37 +114,38 @@ function WorkPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => {
             const cardClass =
-              "group block overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+              "group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
             const media = (
-              <div className="relative aspect-[4/3] overflow-hidden bg-background">
-                <img
-                  src={p.image}
-                  alt={`${p.title} logo`}
-                  className={`h-full w-full transition-transform duration-500 group-hover:scale-[1.03] ${p.imageClass}`}
-                  width={800}
-                  height={600}
-                  loading="lazy"
-                />
+              <div className={MEDIA_BOX}>
+                <div className={LOGO_SQUARE}>
+                  <img
+                    src={p.image}
+                    alt={`${p.title} logo`}
+                    className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                    width={280}
+                    height={280}
+                    loading="lazy"
+                  />
+                </div>
               </div>
             );
 
             const info = (
-              <div className="p-6">
-                <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.category}</p>
-                <h3 className="mt-2 text-xl font-semibold text-foreground">{p.title}</h3>
-                {p.description && (
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-                )}
+              <div className="flex flex-1 flex-col p-6">
+                <p className="min-h-[2.5rem] text-xs font-medium uppercase leading-normal tracking-wider text-primary">
+                  {p.category}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold leading-tight text-foreground">{p.title}</h3>
                 <div className="mt-4 flex items-start gap-3 border-t border-border/60 pt-4">
                   <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <p className="text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Project goal:</span> {p.goal}</p>
                 </div>
                 {p.link && (
-                  <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                  <p className="mt-auto inline-flex items-center gap-1.5 pt-4 text-sm font-medium text-primary">
                     Visit site <ArrowUpRight className="h-4 w-4" />
                   </p>
                 )}
