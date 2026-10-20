@@ -6,3 +6,5 @@
 - External brand links open in a new tab with `rel="noopener noreferrer"` and remain keyboard focusable.
 - Keep brand styling on the design tokens in `src/styles.css` (`text-gradient`, `bg-gradient-primary`, `shadow-glow`, theme colors) instead of hardcoded color utilities, so dark mode keeps working.
 - Baghistan Mangoes is a separate Lovable project; never add its pages or data here.
+- Leaf routes use the shared socialMeta helper in head() while retaining their own document titles and descriptions, preventing duplicate sharing tags in server-rendered HTML.
+- The social preview is a real public file, keeping its URL readable by sharing crawlers without the asset proxy.

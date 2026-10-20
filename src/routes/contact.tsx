@@ -1,3 +1,6 @@
+import { WhatsAppIcon } from "@/components/WhatsAppIcon";
+import { whatsappProjectUrl } from "@/lib/whatsapp";
+import { socialMeta } from "@/lib/social-meta";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
@@ -14,10 +17,7 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title: "Contact — Promix Digital" },
       { name: "description", content: "Get in touch with Promix Digital. Call 0314-2043492 or send us a message to start your project." },
-      { property: "og:title", content: "Contact Promix Digital" },
-      { property: "og:description", content: "Let's build something that converts. Reach out today." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      ...socialMeta("/contact"),
     ],
   }),
   component: ContactPage,
@@ -48,6 +48,11 @@ function ContactPage() {
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Tell us a bit about your brand and goals. We'll respond within 24 hours with next steps.
           </p>
+          <Button asChild size="lg" className="mt-8 min-h-12 w-full bg-primary text-primary-foreground shadow-glow hover:bg-primary/90 sm:w-auto">
+            <a href={whatsappProjectUrl} target="_blank" rel="noopener noreferrer">
+              <WhatsAppIcon /> Chat on WhatsApp
+            </a>
+          </Button>
         </div>
       </section>
 

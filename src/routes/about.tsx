@@ -1,3 +1,4 @@
+import { socialMeta } from "@/lib/social-meta";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -8,10 +9,7 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About — Promix Digital" },
       { name: "description", content: "Promix Digital is a performance-driven team of marketers, designers, and store builders helping brands grow faster." },
-      { property: "og:title", content: "About Promix Digital" },
-      { property: "og:description", content: "Meet the team behind the brands that scale." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      ...socialMeta("/about"),
     ],
   }),
   component: AboutPage,
