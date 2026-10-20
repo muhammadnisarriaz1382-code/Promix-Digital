@@ -1,3 +1,4 @@
+import { socialMeta } from "@/lib/social-meta";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, Target, TrendingUp, ShoppingBag, Megaphone, Palette, Video, GraduationCap } from "lucide-react";
 import { Layout } from "@/components/Layout";
@@ -10,10 +11,7 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Promix Digital — Reach More. Convert Better. Grow Faster." },
       { name: "description", content: "Promix Digital is a full-service agency for store creation, Meta, Google, TikTok & Pinterest ads, branding, video editing, and dropshipping consultation." },
-      { property: "og:title", content: "Promix Digital — Performance Marketing & Storefront Agency" },
-      { property: "og:description", content: "We help brands reach more, convert better, and grow faster." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      ...socialMeta("/"),
     ],
   }),
   component: HomePage,

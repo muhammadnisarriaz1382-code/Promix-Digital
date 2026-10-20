@@ -1,3 +1,4 @@
+import { socialMeta } from "@/lib/social-meta";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ShoppingBag, Megaphone, Palette, Video, GraduationCap, ArrowRight, Check } from "lucide-react";
 import { Layout } from "@/components/Layout";
@@ -8,10 +9,7 @@ export const Route = createFileRoute("/services")({
     meta: [
       { title: "Services — Promix Digital" },
       { name: "description", content: "Shopify & WordPress store creation, Meta, Google, TikTok & Pinterest ads, branding, video editing, and 1-on-1 dropshipping consultation." },
-      { property: "og:title", content: "Services — Promix Digital" },
-      { property: "og:description", content: "Five services. One growth engine for your brand." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      ...socialMeta("/services"),
     ],
   }),
   component: ServicesPage,
