@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Target } from "lucide-react";
 import baghistanAsset from "@/assets/client-work/baghistan.png.asset.json";
 import fineTuneAsset from "@/assets/client-work/fine-tune-3d.png.asset.json";
 import jewelryPalaceAsset from "@/assets/client-work/jewelry-palace.png.asset.json";
@@ -23,7 +23,16 @@ export const Route = createFileRoute("/work")({
   component: WorkPage,
 });
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  goal: string;
+  image: string;
+  imageClass: string;
+  link?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Baghistan",
     category: "D2C Strategy · Ecommerce",
@@ -44,6 +53,7 @@ const projects = [
     goal: "Shape a premium visual direction that builds trust and highlights diamonds and watches with clarity.",
     image: jewelryPalaceAsset.url,
     imageClass: "object-contain p-8",
+    link: "https://shopjewelrypalace.com/",
   },
   {
     title: "Artisan Soap Co.",
@@ -51,20 +61,21 @@ const projects = [
     goal: "Create a clean, approachable identity that lets handcrafted products and their story take center stage.",
     image: artisanSoapAsset.url,
     imageClass: "object-contain p-8",
+    link: "https://artisansoapco.uk/",
   },
   {
     title: "London Furniture",
     category: "Luxury Branding · Social Creative",
     goal: "Establish a refined identity and visual system suited to a premium home-furnishing audience.",
     image: londonFurnitureAsset.url,
-    imageClass: "object-cover",
+    imageClass: "object-contain p-8",
   },
   {
     title: "Noir Indulgence",
     category: "Luxury Identity · Launch Creative",
     goal: "Develop an elegant brand presence with rich campaign visuals designed for a high-end launch.",
     image: noirIndulgenceAsset.url,
-    imageClass: "object-cover",
+    imageClass: "object-contain p-8",
   },
 ];
 
@@ -85,8 +96,11 @@ function WorkPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article key={p.title} className="group overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card">
+          {projects.map((p) => {
+            const cardClass =
+              "group block overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
+
+            const media = (
               <div className="relative aspect-[4/3] overflow-hidden bg-background">
                 <img
                   src={p.image}
@@ -97,6 +111,9 @@ function WorkPage() {
                   loading="lazy"
                 />
               </div>
+            );
+
+            const info = (
               <div className="p-6">
                 <p className="text-xs font-medium uppercase tracking-wider text-primary">{p.category}</p>
                 <h3 className="mt-2 text-xl font-semibold text-foreground">{p.title}</h3>
@@ -104,9 +121,33 @@ function WorkPage() {
                   <Target className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <p className="text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Project goal:</span> {p.goal}</p>
                 </div>
+                {p.link && (
+                  <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                    Visit site <ArrowUpRight className="h-4 w-4" />
+                  </p>
+                )}
               </div>
-            </article>
-          ))}
+            );
+
+            return p.link ? (
+              <a
+                key={p.title}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cardClass}
+                aria-label={`${p.title} — opens in a new tab`}
+              >
+                {media}
+                {info}
+              </a>
+            ) : (
+              <article key={p.title} className={cardClass}>
+                {media}
+                {info}
+              </article>
+            );
+          })}
         </div>
 
         <div className="mt-16 rounded-3xl border border-border bg-gradient-primary p-12 text-center shadow-glow md:p-16">
