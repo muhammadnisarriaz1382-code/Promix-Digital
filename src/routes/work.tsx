@@ -47,11 +47,11 @@ const projects: Project[] = [
     link: "https://charmtot.com/",
   },
   {
-    title: "ZenMart World",
+    title: "A1 Mega Mart",
     category: "Ecommerce Development · US Market Launch",
     goal: "Help shoppers find relevant products, understand their value and complete purchases through a clear, mobile-friendly storefront.",
-    image: "/zenmartworld-logo.png",
-    link: "https://zenmartworld.com/",
+    image: "/a1megamart-logo.png",
+    link: "https://www.a1megamart.com/",
   },
   {
     title: "Baghistan",
