@@ -1,7 +1,7 @@
 const SHARING_ORIGIN = "https://promixdigital.co";
-const SOCIAL_TITLE = "Promix Digital | Performance Marketing & Ecommerce Websites";
-const SOCIAL_DESCRIPTION = "We build ecommerce storefronts and manage performance marketing campaigns. Explore our work and discuss your next project.";
-const SOCIAL_IMAGE = `${SHARING_ORIGIN}/promix-social-preview.png`;
+const SOCIAL_TITLE = "Promix Digital | Your Digital Growth Partner";
+const SOCIAL_DESCRIPTION = "Helping brands build their presence, reach new audiences and grow online.";
+const SOCIAL_IMAGE = `${SHARING_ORIGIN}/promix-social-preview-v2.png`;
 
 export function socialMeta(path: string) {
   return [
