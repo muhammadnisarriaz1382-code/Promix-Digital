@@ -5,6 +5,7 @@ import { Layout } from "@/components/Layout";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import { HomeStatistics } from "@/components/HomeStatistics";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,19 +61,7 @@ function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {[
-              { v: "120+", l: "Stores Launched" },
-              { v: "$4M+", l: "Ad Spend Managed" },
-              { v: "8x", l: "Avg. ROAS" },
-              { v: "50+", l: "Happy Brands" },
-            ].map((s) => (
-              <div key={s.l} className="rounded-2xl border border-border bg-card/60 p-6 backdrop-blur">
-                <div className="text-3xl font-bold text-primary md:text-4xl">{s.v}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
+          <HomeStatistics />
         </div>
       </section>
 

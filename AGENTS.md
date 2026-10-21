@@ -8,3 +8,4 @@
 - Baghistan Mangoes is a separate Lovable project; never add its pages or data here.
 - Leaf routes use the shared socialMeta helper in head() while retaining their own document titles and descriptions, preventing duplicate sharing tags in server-rendered HTML.
 - The social preview is a real public file, keeping its URL readable by sharing crawlers without the asset proxy.
+- Home statistics use one IntersectionObserver and one requestAnimationFrame clock for all counters, with pure formatting helpers and reserved numeric widths to keep synchronization and layout stable without an animation dependency.
