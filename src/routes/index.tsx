@@ -37,7 +37,7 @@ function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:py-24">
-          <div className="max-w-3xl animate-fade-up">
+          <div data-reveal="hero" className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
               <Sparkles className="h-3 w-3" /> Performance-driven digital agency
             </div>
@@ -67,7 +67,7 @@ function HomePage() {
 
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-12 md:py-14">
-        <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div data-reveal className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">What we do</p>
             <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
@@ -81,14 +81,14 @@ function HomePage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => <ServiceCard key={s.number} {...s} />)}
+          {services.map((s, i) => <ServiceCard key={s.number} {...s} revealIndex={i} />)}
         </div>
       </section>
 
       {/* A TO Z STORE HANDLING */}
       <section className="bg-card/30 py-12 md:py-14">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div data-reveal>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">Done-for-you</p>
             <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
               A to Z <span className="text-gradient">Store Handling</span>
@@ -110,7 +110,7 @@ function HomePage() {
               { icon: Palette, t: "Creatives Making", d: "Hooks, statics, and UGC produced in-house." },
               { icon: TrendingUp, t: "Monthly Performance Reports", d: "Transparent reporting so you always know what's working." },
             ].map((f, i) => (
-              <div key={i} className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-smooth hover:border-primary/40">
+              <div key={i} data-reveal data-reveal-index={i} className="flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-smooth hover:border-primary/40">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                   <f.icon className="h-5 w-5" />
                 </div>
@@ -127,7 +127,7 @@ function HomePage() {
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-6 py-12 md:py-14">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-primary p-12 text-center shadow-glow md:p-20">
-          <div className="relative z-10">
+          <div data-reveal className="relative z-10">
             <h2 className="mx-auto max-w-2xl text-4xl font-bold text-primary-foreground md:text-5xl">
               Ready to scale your brand?
             </h2>

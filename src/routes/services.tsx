@@ -52,7 +52,7 @@ function ServicesPage() {
   return (
     <Layout>
       <section className="border-b border-border/50 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div data-reveal="hero" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our services</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-bold text-foreground md:text-6xl">
             Everything you need to <span className="text-gradient">grow online</span>
@@ -69,6 +69,8 @@ function ServicesPage() {
           {services.map((s, i) => (
             <div
               key={s.title}
+              data-reveal
+              data-reveal-index={i}
               className="group grid gap-8 rounded-3xl border border-border bg-card p-8 transition-smooth hover:border-primary/40 hover:shadow-card md:grid-cols-[auto_1fr_auto] md:items-center md:p-10"
             >
               <div className="flex items-center gap-5">

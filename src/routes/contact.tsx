@@ -40,7 +40,7 @@ function ContactPage() {
     <Layout>
       <Toaster position="top-center" />
       <section className="border-b border-border/50 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div data-reveal="hero" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Get in touch</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-bold text-foreground md:text-6xl">
             Let's build something <span className="text-gradient">that converts</span>
@@ -60,7 +60,7 @@ function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr]">
           {/* Contact info */}
           <div className="space-y-6">
-            <div className="rounded-2xl border border-border bg-card p-8">
+            <div data-reveal className="rounded-2xl border border-border bg-card p-8">
               <h3 className="text-lg font-semibold text-foreground">Reach us directly</h3>
               <ul className="mt-6 space-y-5">
                 {[
@@ -83,15 +83,17 @@ function ContactPage() {
             </div>
 
             <div className="rounded-2xl bg-gradient-primary p-8 shadow-glow">
+              <div data-reveal data-reveal-index={1}>
               <h3 className="text-lg font-semibold text-primary-foreground">Free strategy call</h3>
               <p className="mt-2 text-sm text-primary-foreground/80">
                 Book a 30-minute audit. We'll review your store, ads, and creative — no pitch, just feedback.
               </p>
+              </div>
             </div>
           </div>
 
           {/* Form */}
-          <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 md:p-10">
+          <form data-reveal data-reveal-index={1} onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-8 md:p-10">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
                 <Label htmlFor="name">Name</Label>

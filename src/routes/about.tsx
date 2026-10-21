@@ -19,7 +19,7 @@ function AboutPage() {
   return (
     <Layout>
       <section className="border-b border-border/50 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div data-reveal="hero" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">About us</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-bold text-foreground md:text-6xl">
             We build brands that <span className="text-gradient">actually sell</span>
@@ -34,7 +34,7 @@ function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div data-reveal>
             <h2 className="text-3xl font-bold text-foreground md:text-4xl">Our story</h2>
             <div className="mt-6 space-y-4 text-muted-foreground">
               <p>
@@ -63,8 +63,8 @@ function AboutPage() {
               { icon: Heart, title: "Values", text: "Honest reporting, real partnerships, and obsession with results." },
               { icon: Rocket, title: "Mission", text: "Scale 100 brands past seven figures by 2026." },
               { icon: Users, title: "Team", text: "Marketers, editors, designers, and developers — under one roof." },
-            ].map((b) => (
-              <div key={b.title} className="rounded-2xl border border-border bg-card p-6 transition-smooth hover:border-primary/40 hover:shadow-card">
+            ].map((b, i) => (
+              <div key={b.title} data-reveal data-reveal-index={i} className="rounded-2xl border border-border bg-card p-6 transition-smooth hover:border-primary/40 hover:shadow-card">
                 <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
                   <b.icon className="h-5 w-5" />
                 </div>
@@ -78,7 +78,7 @@ function AboutPage() {
 
       <section className="bg-card/30 py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="text-center">
+          <div data-reveal className="text-center">
             <h2 className="text-3xl font-bold text-foreground md:text-4xl">By the numbers</h2>
             <p className="mt-3 text-muted-foreground">A snapshot of what we've shipped so far.</p>
           </div>
@@ -88,8 +88,8 @@ function AboutPage() {
               { v: "$4M+", l: "Ad spend managed" },
               { v: "8x", l: "Average ROAS" },
               { v: "50+", l: "Brands served" },
-            ].map((s) => (
-              <div key={s.l} className="rounded-2xl border border-border bg-background p-8 text-center">
+            ].map((s, i) => (
+              <div key={s.l} data-reveal data-reveal-index={i} className="rounded-2xl border border-border bg-background p-8 text-center">
                 <div className="text-4xl font-bold text-gradient md:text-5xl">{s.v}</div>
                 <div className="mt-2 text-sm text-muted-foreground">{s.l}</div>
               </div>

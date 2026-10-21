@@ -100,7 +100,7 @@ function WorkPage() {
   return (
     <Layout>
       <section className="border-b border-border/50 bg-card/30">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div data-reveal="hero" className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Selected work</p>
           <h1 className="mt-3 max-w-3xl text-5xl font-bold text-foreground md:text-6xl">
             Brands we've helped <span className="text-gradient">move forward</span>
@@ -113,7 +113,7 @@ function WorkPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => {
+          {projects.map((p, i) => {
             const cardClass =
               "group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-smooth hover:border-primary/50 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
@@ -153,6 +153,8 @@ function WorkPage() {
             return p.link ? (
               <a
                 key={p.title}
+                data-reveal
+                data-reveal-index={i}
                 href={p.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -163,7 +165,7 @@ function WorkPage() {
                 {info}
               </a>
             ) : (
-              <article key={p.title} className={cardClass}>
+              <article key={p.title} data-reveal data-reveal-index={i} className={cardClass}>
                 {media}
                 {info}
               </article>
@@ -172,6 +174,7 @@ function WorkPage() {
         </div>
 
         <div className="mt-16 rounded-3xl border border-border bg-gradient-primary p-12 text-center shadow-glow md:p-16">
+          <div data-reveal>
           <h2 className="text-3xl font-bold text-primary-foreground md:text-4xl">Could your brand be next?</h2>
           <p className="mx-auto mt-3 max-w-xl text-primary-foreground/80">
             Tell us about your goals — we'll send back a tailored growth plan within 48 hours.
@@ -179,6 +182,7 @@ function WorkPage() {
           <Button asChild size="lg" className="mt-8 bg-background text-foreground hover:bg-background/90">
             <Link to="/contact">Start a Project <ArrowRight className="ml-2 h-4 w-4" /></Link>
           </Button>
+          </div>
         </div>
       </section>
     </Layout>
