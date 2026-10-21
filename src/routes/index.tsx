@@ -35,7 +35,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-6 py-28 md:py-40">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 py-20 md:py-24">
           <div className="max-w-3xl animate-fade-up">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
               <Sparkles className="h-3 w-3" /> Performance-driven digital agency
@@ -60,7 +60,7 @@ function HomePage() {
           </div>
 
           {/* Stats */}
-          <div className="mt-20 grid grid-cols-2 gap-6 md:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
             {[
               { v: "120+", l: "Stores Launched" },
               { v: "$4M+", l: "Ad Spend Managed" },
@@ -77,7 +77,7 @@ function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-12 md:py-14">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">What we do</p>
@@ -97,7 +97,7 @@ function HomePage() {
       </section>
 
       {/* A TO Z STORE HANDLING */}
-      <section className="bg-card/30 py-24">
+      <section className="bg-card/30 py-12 md:py-14">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">Done-for-you</p>
@@ -136,7 +136,7 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="mx-auto max-w-7xl px-6 py-24">
+      <section className="mx-auto max-w-7xl px-6 py-12 md:py-14">
         <div className="relative overflow-hidden rounded-3xl bg-gradient-primary p-12 text-center shadow-glow md:p-20">
           <div className="relative z-10">
             <h2 className="mx-auto max-w-2xl text-4xl font-bold text-primary-foreground md:text-5xl">
