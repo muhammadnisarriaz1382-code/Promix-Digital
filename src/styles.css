@@ -93,6 +93,9 @@
   --shadow-elegant: 0 20px 50px -20px oklch(0 0 0 / 0.6);
   --shadow-card: 0 10px 30px -12px oklch(0.78 0.21 142 / 0.25);
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --reveal-duration: 650ms;
+  --reveal-distance: 24px;
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -192,3 +195,31 @@
   to { opacity: 1; transform: translateY(0); }
 }
 .animate-fade-up { animation: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both; }
+
+/* Visible by default, including SSR and JavaScript-disabled visits. */
+[data-reveal][data-reveal-state] {
+  transition: opacity var(--reveal-duration) var(--reveal-ease) var(--reveal-delay, 0ms),
+    transform var(--reveal-duration) var(--reveal-ease) var(--reveal-delay, 0ms),
+    border-color 0.4s ease-out, box-shadow 0.4s ease-out;
+}
+[data-reveal][data-reveal-state="pending"] {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+}
+[data-reveal][data-reveal-state="visible"] {
+  opacity: 1;
+  transform: none;
+}
+[data-reveal]:focus-within {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0ms;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal][data-reveal-state] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
