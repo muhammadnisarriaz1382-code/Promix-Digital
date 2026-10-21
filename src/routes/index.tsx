@@ -78,7 +78,7 @@ function HomePage() {
 
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-12 md:py-14">
-        <div className="mb-14 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+        <div className="mb-10 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-widest text-primary">What we do</p>
             <h2 className="mt-3 text-4xl font-bold text-foreground md:text-5xl">
