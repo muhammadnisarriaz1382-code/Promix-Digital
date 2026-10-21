@@ -52,7 +52,7 @@ export function HomeStatistics() {
   }, []);
 
   return (
-    <div ref={section} className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4" data-statistics>
+    <div ref={section} className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4" data-statistics data-reveal>
       {statistics.map(({ value, label }) => {
         const parts = splitCounter(value);
         return (
