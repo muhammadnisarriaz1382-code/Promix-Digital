@@ -3,7 +3,7 @@ import { countUpProgress, formatCounter, splitCounter } from "@/lib/count-up";
 
 const statistics = [
   { value: "120+", label: "Stores Launched" },
-  { value: "$4M+", label: "Ad Spend Managed" },
+  { value: "$10M+", label: "Ad Spend Managed" },
   { value: "8x", label: "Avg. ROAS" },
   { value: "50+", label: "Happy Brands" },
 ];

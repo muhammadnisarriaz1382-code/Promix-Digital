@@ -85,7 +85,7 @@ function AboutPage() {
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {[
               { v: "120+", l: "Stores launched" },
-              { v: "$4M+", l: "Ad spend managed" },
+              { v: "$10M+", l: "Ad spend managed" },
               { v: "8x", l: "Average ROAS" },
               { v: "50+", l: "Brands served" },
             ].map((s, i) => (
