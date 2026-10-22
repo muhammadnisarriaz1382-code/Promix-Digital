@@ -1,5 +1,6 @@
 # Requested updates
-- [ ] Add consistent scroll reveals and verify Home, Services, About, Work and Contact on desktop and mobile.
+- [x] Add consistent scroll reveals and verify Home, Services, About, Work and Contact on desktop and mobile.
+- [x] Raise the Ad Spend Managed statistic to $10M+ on Home and About, keeping the count-up animation.
 - [x] Add and verify synchronized home statistics count-up with reduced-motion support and no layout shifts.
 - [x] Tighten the vertical space between home page sections.
 - [x] Create and inspect the branded 1200 × 630 local social image.
